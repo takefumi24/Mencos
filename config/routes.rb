@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   omniauth_callbacks: 'users/omniauth_callbacks',
   registrations: 'users/registrations'
   }
-  root to:"posts#index"
-  resources :users
+  resources :posts, only: [:index, :new, :show]
+  resources :users, only: [:show, :edit, :update]
 end
