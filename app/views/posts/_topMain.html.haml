@@ -58,10 +58,9 @@
             %tr
               %td.top-main__contents__new-posts__content__title
                 ブランド
-              %td.top-main__contents__new-posts__content__body
-                Ocean
-              %td.top-main__contents__new-posts__content__body
-                Ocean
+              - @posts.each do |post|
+                %td.top-main__contents__new-posts__content__body
+                  = post.brand
             %tr
               %td.top-main__contents__new-posts__content__title
                 商品名
@@ -72,11 +71,10 @@
             %tr
               %td.top-main__contents__new-posts__content__title
                 カテゴリー
+              - @posts.each do |post|
+                %td.top-main__contents__new-posts__content__body
+                  = post.category.name
               %td.top-main__contents__new-posts__content__body
-                バス用品
-              %td.top-main__contents__new-posts__content__body
-                バス用品
-            %tr
               %td.top-main__contents__new-posts__content__title
                 評価
               %td.top-main__contents__new-posts__content__body
