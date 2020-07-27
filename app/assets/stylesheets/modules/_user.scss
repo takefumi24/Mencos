@@ -96,7 +96,7 @@
         width: fit-content;
         position: relative;
         .image-btn {
-          background-color: $mainColor;
+          border: 0.5px solid $mainColor;
           border-radius: 50%;
         }
         & input{
