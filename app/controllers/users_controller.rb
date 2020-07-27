@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @user_age = Agehash.find(@user.age)
+    unless @user.age.blank?
+      @user_age = Agehash.find(@user.age)
+    end
   end
 
   def edit
