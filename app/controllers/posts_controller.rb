@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   # 親カテゴリーが選択された後に動くアクション
