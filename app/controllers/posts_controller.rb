@@ -30,8 +30,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @post = Post.includes(:images).find(params[:id])
+    # @post.user = User.find(params[:id])
+    unless @post.user.age.blank?
+      @user_age = Agehash.find(@post.user.age)
+    end
   end
 
   # 親カテゴリーが選択された後に動くアクション
